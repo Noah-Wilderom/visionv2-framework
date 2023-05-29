@@ -1,6 +1,6 @@
 <?php
 
-namespace Vision\Config;
+namespace Visionv2\Config;
 
 use Dotenv\Dotenv;
 use InvalidArgumentException;

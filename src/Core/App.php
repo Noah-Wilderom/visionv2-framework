@@ -9,7 +9,7 @@ class App
     use Macroable;
 
     private static $basePath;
-    private static Config\Handler $config;
+    private static \Visionv2\Config\Handler $config;
     private Kernel $kernel;
 
     public function __construct()
