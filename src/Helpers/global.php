@@ -1,5 +1,8 @@
 <?php
 
+use Visionv2\Core\App;
+use Visionv2\Helpers\Dumper;
+
 if(! function_exists('app'))
 {
     /**
@@ -9,7 +12,7 @@ if(! function_exists('app'))
      */
     function app()
     {
-        return new \Visionv2\Core\App();
+        return new App();
     }
 }
 
@@ -19,7 +22,7 @@ if (!function_exists('dump'))
      * Dumps the values
      *
      * @param mixed values
-     * @return \Vision\Helpers\Dumper
+     * @return \Visionv2\Helpers\Dumper
      */
     function dump(...$values)
     {
@@ -58,7 +61,7 @@ if (!function_exists('view'))
     /**
      * require the view component
      *
-     * @return \Vision\Core\App
+     * @return \Visionv2\Core\App
      */
     function view($view, $attributes = [])
     {
@@ -102,7 +105,7 @@ if (!function_exists('env'))
      */
     function env(string $item)
     {
-        return Config\Handler::getEnv($item);
+        return \Visionv2\Config\Handler::getEnv($item);
     }
 }
 
@@ -116,7 +119,7 @@ if (!function_exists('config'))
      */
     function config(string $key = null)
     {
-        return Config\Handler::getConfig($key);
+        return \Visionv2\Config\Handler::getConfig($key);
     }
 }
 
