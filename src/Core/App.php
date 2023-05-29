@@ -71,7 +71,7 @@ class App
             return $obj->{$route['method']}();
         }
 
-        abort(404);
+        abort('Not found', 404);
     }
 
     public function buildKernel($args): void
