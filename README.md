@@ -1,4 +1,4 @@
-<div style="text-align: center; margin-bottom: 25px">
+<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 25px;">
   <img src="./.github/logos/logo-no-background.svg" width="200" alt="Image">
   <h3 style="margin-top: 15px;">PHP Framework</h3>
   <hr>
