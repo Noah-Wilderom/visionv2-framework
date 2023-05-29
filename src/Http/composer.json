@@ -1,0 +1,19 @@
+{
+  "name": "visionv2/framework",
+  "description": "Another php laravel inspired framework version 2.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Noah Wilderom",
+      "email": "wilderomnoah@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Visionv2\\Http\\": ""
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "visionv2/framework",
+    "description": "Another php laravel inspired framework version 2.",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/Helpers/global.php"
+        ],
+        "psr-4": {
+            "Visionv2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Noah Wilderom",
+            "email": "wilderomnoah@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^5.4.1",
+        "symfony/finder": "^6.1"
+    },
+    "repositories": {
+        "packagist.org": true
+    }
+}
