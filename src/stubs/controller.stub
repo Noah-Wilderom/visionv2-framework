@@ -1,0 +1,9 @@
+<?php
+use Visionv2\Http\Controller as BaseController;
+
+namespace Visionv2\Http\Controllers;
+
+class {{ controllerName }} extends BaseController
+{
+    //
+}
