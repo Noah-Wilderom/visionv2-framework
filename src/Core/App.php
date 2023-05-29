@@ -32,7 +32,7 @@ class App
     public function build()
     {
         //Initialize the Config handler
-        static::$config = new Config\Handler;
+        static::$config = new \Visionv2\Config\Handler;
 
         // Initialize the Request
         $this->request = new Request();
