@@ -4,6 +4,7 @@ namespace Visionv2\Core;
 
 use ReflectionMethod;
 use Visionv2\Console\Kernel;
+use Visionv2\Http\Router;
 use Visionv2\Traits\Macroable;
 
 class App
@@ -46,7 +47,7 @@ class App
         // TODO: Omzetten naar providers
         require routes_path() . DIRECTORY_SEPARATOR . 'web.php';
 
-        $routes = Route::getRoutes();
+        $routes = Router::getRoutes();
         $uri = $this->getURL();
 
         // print_r($routes);
