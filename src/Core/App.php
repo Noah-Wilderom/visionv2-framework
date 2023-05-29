@@ -2,6 +2,7 @@
 
 namespace Visionv2\Core;
 
+use ReflectionMethod;
 use Visionv2\Console\Kernel;
 use Visionv2\Traits\Macroable;
 
@@ -35,14 +36,15 @@ class App
         static::$config = new \Visionv2\Config\Handler;
 
         // Initialize the Request
-        $this->request = new Request();
+//        $this->request = new Request();
 
         return $this->setRouting();
     }
 
     private function setRouting()
     {
-        require root_path() . DIRECTORY_SEPARATOR . 'routes.php';
+        // TODO: Omzetten naar providers
+        require routes_path() . DIRECTORY_SEPARATOR . 'web.php';
 
         $routes = Route::getRoutes();
         $uri = $this->getURL();

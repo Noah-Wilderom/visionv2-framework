@@ -4,7 +4,7 @@ namespace Visionv2\Config;
 
 use Dotenv\Dotenv;
 use InvalidArgumentException;
-use Vision\Helpers\Directory;
+use Visionv2\Helpers\Directory;
 use Symfony\Component\Finder\Finder;
 
 class Handler

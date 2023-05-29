@@ -2,6 +2,7 @@
 
 use Visionv2\Core\App;
 use Visionv2\Helpers\Dumper;
+use Visionv2\Exceptions\HttpException;
 
 if(! function_exists('app'))
 {
@@ -129,10 +130,10 @@ if (!function_exists('abort'))
      * abort and show exception
      *
      * @param string value
-     * @return ErrorException
+     * @return HttpException
      */
     function abort($message, $code = 500)
     {
-        return new ErrorException($message, $code);
+        return new HttpException($message, $code);
     }
 }
