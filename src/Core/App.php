@@ -2,6 +2,7 @@
 
 namespace Visionv2\Core;
 
+use Visionv2\Console\Kernel;
 use Visionv2\Traits\Macroable;
 
 class App
@@ -73,7 +74,7 @@ class App
     public function buildKernel($args): void
     {
         //Initialize the Config handler
-        static::$config = new Config\Handler;
+        static::$config = new \Visionv2\Config\Handler;
 
         $this->kernel = new Kernel();
 
