@@ -11,13 +11,24 @@ class App
 {
     use Macroable;
 
-    private static $basePath;
+    private static string $basePath;
+
+    private Container $container;
+    private static array $bindings;
+
     private static \Visionv2\Config\Handler $config;
     private Kernel $kernel;
 
     public function __construct()
     {
         static::init();
+
+        $this->container = new Container();
+    }
+
+    public function container()
+    {
+        return $this->container;
     }
 
     public static function init(): void
@@ -60,15 +71,22 @@ class App
             $obj = new $route['controller'];
 
             $method = new ReflectionMethod($obj, $route['method']);
+            $parameters = [];
             foreach ($method->getParameters() as $arg)
             {
-//                if ($arg->getType() instanceof Route)
-//                {
-//                    return $obj->{$route['method']}($this->request);
-//                }
+                if($this->container()->exists($arg->getType()))
+                {
+                    $parameters[] = $this->container()->get($arg->getType());
+                }
             }
 
-            return $obj->{$route['method']}();
+            if(empty($parameters))
+            {
+                return $obj->{$route['method']}();
+            }
+
+            return $obj->{$route['method']}(extract($parameters));
+
         }
 
         abort('Not found', 404);
