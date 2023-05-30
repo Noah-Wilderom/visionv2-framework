@@ -26,7 +26,7 @@ class App
         $this->container = new Container();
     }
 
-    public function container()
+    public function container(): Container
     {
         return $this->container;
     }
@@ -85,7 +85,8 @@ class App
                 return $obj->{$route['method']}();
             }
 
-            return $obj->{$route['method']}(extract($parameters));
+            return call_user_func_array([$obj, $route['method']], $parameters);
+//            return $obj->{$route['method']}(extract($parameters));
 
         }
 
